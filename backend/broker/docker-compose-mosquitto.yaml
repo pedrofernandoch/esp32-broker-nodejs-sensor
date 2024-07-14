@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+#Servico MQTT usando o eclipse-mosquitto utilizando as seguintes pastas para guardar as configuracoes, os dados e os logs utilizando a porta 8123.
+  mqtt:
+    container_name: mqtt
+    image: eclipse-mosquitto
+    restart: always
+    volumes:
+      - ./mosquitto:/mosquitto
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    ports:
+      - 8123:8123

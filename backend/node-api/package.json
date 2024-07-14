@@ -1,0 +1,39 @@
+{
+  "name": "iot-project",
+  "version": "1.0.0",
+  "description": "API to subscribe to Mosquitto broker and provide endpoint with express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon",
+    "start": "node index.js",
+    "production": "pm2 start index.js --name iot-node-api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/icmc-ssc0952/2022/giotgrad09.git"
+  },
+  "author": "Pedro Christofoletti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/icmc-ssc0952/2022/giotgrad09/issues"
+  },
+  "homepage": "https://gitlab.com/icmc-ssc0952/2022/giotgrad09#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jwt-simple": "^0.5.6",
+    "knex": "^2.3.0",
+    "mqtt": "^4.3.7",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.8.0",
+    "pm2": "^5.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

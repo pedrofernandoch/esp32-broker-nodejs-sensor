@@ -1,0 +1,59 @@
+.app {
+  background-image: url('../assets/w1.png');
+  background-size: cover;
+  transition: 0.4 ease;
+}
+
+.dashboard {
+  min-height: 70vh;
+  padding: 25px;
+}
+
+.Title-box .refresh {
+  text-align: center;
+  padding: 0px 0px;
+}
+
+.Title-box .title {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.863);
+  border-radius: 0px 0px 16px 16px;
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+  color: #1b1b1b;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  transition: 0.4s ease;
+}
+
+.Title-box .date {
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.weather-box .monitor {
+  background-size: cover;
+  background-position: bottom;
+  position: center;
+  display: center;
+  margin: 24px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  padding: 15px 25px;
+  color: #FFF;
+  font-size: 88px;
+  font-weight: 900;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}

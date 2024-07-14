@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '8223:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ../database/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+  api:
+    container_name: node-api
+    build:
+      context: ./
+    depends_on:
+      - db
+    ports:
+      - '8323:8323'
+    environment:
+      DB_HOST: myhost
+      DB_PORT: 8223
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_DATABASE: postgres
+      AUTH_SECRET: secret
+      API_PORT: 8323
+      MQTT_HOST: myhost
+      MQTT_PORT: 8123
+      MQTT_USERNAME: admin
+      MQTT_PASSWORD: admin12345
+      LOG: Y
+      SHOULD_AUTHENTICATE: Y
+    links:
+      - db
+    volumes:
+      - './:/src'
+volumes:
+  db:
+    driver: local

@@ -1,0 +1,13 @@
+docker compose -f docker-compose-node-postgres.yml up -d --remove-orphans
+
+docker compose -f docker-compose-node-postgres.yml down
+
+docker compose -f apache-compose.yml down
+
+docker exec -it node-api
+
+docker compose -f apache-compose.yml up --remove-orphans
+
+docker compose -f docker-compose-node-postgres.yml up --remove-orphans
+
+docker compose -f docker-compose-mosquitto.yaml up --remove-orphans
